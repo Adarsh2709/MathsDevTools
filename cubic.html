@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cubic Calculator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="cubic.js"></script>
+  <script defer src="site.js"></script>
+</head>
+<body>
+  <div class="page">
+    <header class="header">
+      <nav class="site-nav" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link">Logarithm</a>
+        <a href="prime.html" class="nav-link">Prime Checker</a>
+        <a href="primes-range.html" class="nav-link">Primes in Range</a>
+        <a href="base-converter.html" class="nav-link">Base Converter</a>
+        <a href="quadratic.html" class="nav-link">Quadratic</a>
+        <a href="cubic.html" class="nav-link">Cubic</a>
+        <a href="power.html" class="nav-link">Power</a>
+      </nav>
+      <h1>Cubic Calculator</h1>
+      <p class="subtitle">Solve ax³ + bx² + cx + d = 0 (real roots)</p>
+    </header>
+
+    <main class="content">
+      <section class="panel inputs" aria-labelledby="inputs-title">
+        <h2 id="inputs-title">Inputs</h2>
+        <div class="fields">
+          <label class="field">
+            <span>a</span>
+            <input id="a" type="number" step="any" value="1" />
+          </label>
+          <label class="field">
+            <span>b</span>
+            <input id="b" type="number" step="any" value="0" />
+          </label>
+          <label class="field">
+            <span>c</span>
+            <input id="c" type="number" step="any" value="-1" />
+          </label>
+          <label class="field">
+            <span>d</span>
+            <input id="d" type="number" step="any" value="0" />
+          </label>
+        </div>
+        <div id="validation" class="validation" role="status" aria-live="polite"></div>
+      </section>
+
+      <section class="panel results" aria-labelledby="results-title">
+        <h2 id="results-title">Results</h2>
+        <div class="cards">
+          <div class="card">
+            <div class="card-title">Discriminant</div>
+            <div id="disc" class="card-value">–</div>
+          </div>
+          <div class="card">
+            <div class="card-title">Real Roots</div>
+            <div id="roots" class="card-value">–</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel steps" aria-labelledby="steps-title">
+        <h2 id="steps-title">Steps</h2>
+        <div id="steps" class="steps-list"></div>
+      </section>
+
+      <section class="panel" aria-labelledby="theory-title">
+        <h2 id="theory-title">Theory & Notes</h2>
+        <div class="steps-list">
+          <div>• A cubic is degree 3: f(x)=ax³+bx²+cx+d with a≠0.</div>
+          <div>• Roots count: at least one real root; depending on discriminant, either one real + two complex, or three real roots.</div>
+          <div>• Depressed cubic: substitute x=t−b/(3a) to get t³+pt+q=0. Solve via Cardano or trigonometric formulas.</div>
+          <div>• Shape: S-like if three real roots; monotonic if one real root. Inflection at f''(x)=0 → x=−b/(3a).</div>
+          <div>• Numerical practice: for general inputs prefer robust library solvers; symbolic formulas can be ill-conditioned.</div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div>Made with <span style="color:#ef4444;">❤</span> — Adarsh Jha, Developer</div>
+    </footer>
+  </div>
+</body>
+</html>

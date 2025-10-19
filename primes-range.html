@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Primes in Range</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="primes-range.js"></script>
+  <script defer src="site.js"></script>
+</head>
+<body>
+  <div class="page">
+    <header class="header">
+      <nav class="site-nav" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link">Logarithm</a>
+        <a href="prime.html" class="nav-link">Prime Checker</a>
+        <a href="primes-range.html" class="nav-link">Primes in Range</a>
+        <a href="base-converter.html" class="nav-link">Base Converter</a>
+        <a href="quadratic.html" class="nav-link">Quadratic</a>
+        <a href="cubic.html" class="nav-link">Cubic</a>
+        <a href="power.html" class="nav-link">Power</a>
+      </nav>
+      <h1>Primes in Range</h1>
+      <p class="subtitle">List primes between two integers using a fast sieve</p>
+    </header>
+
+    <main class="content">
+      <section class="panel inputs" aria-labelledby="inputs-title">
+        <h2 id="inputs-title">Inputs</h2>
+        <div class="fields">
+          <label class="field">
+            <span>Start</span>
+            <input id="start" type="number" step="1" placeholder="e.g., 1" value="1" />
+          </label>
+          <label class="field">
+            <span>End</span>
+            <input id="end" type="number" step="1" placeholder="e.g., 100" value="100" />
+          </label>
+        </div>
+        <div id="validation" class="validation" role="status" aria-live="polite"></div>
+      </section>
+
+      <section class="panel results" aria-labelledby="results-title">
+        <h2 id="results-title">Summary</h2>
+        <div class="cards">
+          <div class="card">
+            <div class="card-title">Count</div>
+            <div id="count" class="card-value">–</div>
+          </div>
+          <div class="card">
+            <div class="card-title">First / Last</div>
+            <div id="firstlast" class="card-value">–</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel steps" aria-labelledby="list-title">
+        <h2 id="list-title">Primes</h2>
+        <div id="list" class="steps-list"></div>
+      </section>
+
+      <section class="panel" aria-labelledby="theory-title">
+        <h2 id="theory-title">Theory & Notes</h2>
+        <div class="steps-list">
+          <div>• Prime Distribution: π(n) ≈ n / ln n (Prime Number Theorem) gives an estimate of how many primes ≤ n.</div>
+          <div>• Sieve of Eratosthenes: mark multiples of each prime starting from 2; segmented sieves reduce memory for large ranges.</div>
+          <div>• Practical Tips: generate base primes up to √hi, then mark in blocks [lo, hi] to get primes in range efficiently.</div>
+          <div>• Applications: cryptography (keys), hashing, random sampling, modular arithmetic problems.</div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div>Made with <span style="color:#ef4444;">❤</span> — Adarsh Jha, Developer</div>
+    </footer>
+  </div>
+</body>
+</html>

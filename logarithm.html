@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Logarithm Calculator</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdn.plot.ly" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
+
+  <script src="https://cdn.plot.ly/plotly-latest.min.js" defer></script>
+  <script defer id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <script defer src="app.js"></script>
+  <script defer src="site.js"></script>
+</head>
+<body>
+  <div class="page">
+    <header class="header">
+      <nav class="site-nav" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="logarithm.html" class="nav-link">Logarithm</a>
+        <a href="prime.html" class="nav-link">Prime Checker</a>
+        <a href="primes-range.html" class="nav-link">Primes in Range</a>
+        <a href="base-converter.html" class="nav-link">Base Converter</a>
+        <a href="quadratic.html" class="nav-link">Quadratic</a>
+        <a href="cubic.html" class="nav-link">Cubic</a>
+        <a href="power.html" class="nav-link">Power</a>
+      </nav>
+      <h1>Logarithm Calculator</h1>
+      <p class="subtitle">Classic, math-inspired exploration of logarithms</p>
+    </header>
+
+    <main class="content">
+      <section class="panel inputs" aria-labelledby="inputs-title">
+        <h2 id="inputs-title">Inputs</h2>
+        <div class="fields">
+          <label class="field">
+            <span>Base b</span>
+            <input id="base" type="number" step="any" placeholder="e.g., 5" value="2" />
+          </label>
+          <label class="field">
+            <span>Number x</span>
+            <input id="number" type="number" step="any" placeholder="e.g., 34" value="1" />
+          </label>
+        </div>
+        <div id="validation" class="validation" role="status" aria-live="polite"></div>
+      </section>
+
+      <section class="panel results" aria-labelledby="results-title">
+        <h2 id="results-title">Values</h2>
+        <div class="cards">
+          <div class="card">
+            <div class="card-title">log<sub>b</sub>(x)</div>
+            <div id="logbx" class="card-value">–</div>
+          </div>
+          <div class="card">
+            <div class="card-title">ln(x)</div>
+            <div id="lnx" class="card-value">–</div>
+          </div>
+          <div class="card">
+            <div class="card-title">log<sub>10</sub>(x)</div>
+            <div id="log10x" class="card-value">–</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel relations" aria-labelledby="relations-title">
+        <h2 id="relations-title">Relations</h2>
+        <div class="math-block" id="relations-math"></div>
+      </section>
+
+      <section class="panel steps" aria-labelledby="steps-title">
+        <h2 id="steps-title">Decomposition & Intuition</h2>
+        <div id="steps" class="steps-list"></div>
+      </section>
+
+      <section class="panel" aria-labelledby="theory-title">
+        <h2 id="theory-title">Theory & Notes</h2>
+        <div class="steps-list">
+          <div>• Definition: For b > 0, b ≠ 1 and x > 0, log<sub>b</sub>(x) is the exponent y such that b<sup>y</sup> = x.</div>
+          <div>• Change of base: log<sub>b</sub>(x) = ln(x)/ln(b) = log<sub>10</sub>(x)/log<sub>10</sub>(b).</div>
+          <div>• Laws: log(xy)=log x + log y; log(x/y)=log x − log y; log(x<sup>k</sup>)=k·log x.</div>
+          <div>• Shapes: For b>1, log<sub>b</sub>(x) increases slowly; for 0<b<1 it decreases. Domain is x>0, range is all real numbers.</div>
+          <div>• Typical bases: e (natural log), 10 (common log), 2 (binary log).</div>
+        </div>
+      </section>
+
+      <section class="panel graph" aria-labelledby="graph-title">
+        <h2 id="graph-title">Graphs</h2>
+        <div class="graph-controls">
+          <label>
+            <input type="checkbox" id="toggle-ln" checked /> Show y = ln(x)
+          </label>
+          <label>
+            <input type="checkbox" id="toggle-log10" checked /> Show y = log10(x)
+          </label>
+          <label>
+            <input type="checkbox" id="toggle-logb" checked /> Show y = log<sub>b</sub>(x)
+          </label>
+          <label>
+            <input type="checkbox" id="toggle-plotly" checked /> Interactive Plotly
+          </label>
+        </div>
+        <div class="graph-controls" style="flex-wrap: wrap; gap: 8px 12px;">
+          <label>
+            <input type="checkbox" id="auto-x" checked /> Auto X
+          </label>
+          <label>
+            x-min <input id="x-min" type="number" step="any" placeholder="> 0" style="width: 110px;" disabled />
+          </label>
+          <label>
+            x-max <input id="x-max" type="number" step="any" placeholder="> x-min" style="width: 110px;" disabled />
+          </label>
+          <label>
+            <input type="checkbox" id="auto-y" checked /> Auto Y
+          </label>
+          <label>
+            y-min <input id="y-min" type="number" step="any" style="width: 110px;" disabled />
+          </label>
+          <label>
+            y-max <input id="y-max" type="number" step="any" style="width: 110px;" disabled />
+          </label>
+          <button id="btn-reset" type="button" class="nav-link">Reset</button>
+          <button id="btn-fit" type="button" class="nav-link">Fit</button>
+        </div>
+        <div id="plot" class="plot"></div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div>Made with <span style="color:#ef4444;">❤</span> — Adarsh Jha, Developer</div>
+    </footer>
+  </div>
+</body>
+</html>

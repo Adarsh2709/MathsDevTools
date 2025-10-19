@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Math Tools by Adarsh</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="site.js"></script>
+  <style>
+    .hero { display:flex; flex-direction:column; gap:16px; padding:28px; }
+    .cta { display:flex; gap:12px; flex-wrap:wrap; }
+    .cards-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap:14px; }
+    .tool-card { padding:16px; border:1px solid var(--grid-strong); border-radius:12px; background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0)); }
+    .tool-card a { text-decoration:none; color:var(--ink); }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="header">
+      <nav class="site-nav" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="logarithm.html" class="nav-link">Logarithm</a>
+        <a href="prime.html" class="nav-link">Prime Checker</a>
+        <a href="primes-range.html" class="nav-link">Primes in Range</a>
+        <a href="base-converter.html" class="nav-link">Base Converter</a>
+        <a href="quadratic.html" class="nav-link">Quadratic</a>
+        <a href="cubic.html" class="nav-link">Cubic</a>
+        <a href="power.html" class="nav-link">Power</a>
+      </nav>
+      <h1>Math Tools for Devs</h1>
+      <p class="subtitle">Fast, clean calculators and notes that help while coding or solving math problems.</p>
+    </header>
+
+    <main class="content">
+      <section class="panel hero" aria-labelledby="hero-title">
+        <h2 id="hero-title">Welcome</h2>
+        <div class="steps-list">
+          <div>• I’m a developer who writes <em>Thoughts, Notes, and Tutorials</em> focused on <strong>Java</strong>, <strong>DSA</strong>, <strong>Machine Learning</strong>, and developer productivity.</div>
+          <div>• Posts are concise and practical with code you can apply right away. New posts every week.</div>
+          <div>• Say hi or collaborate: <a class="nav-link" href="https://myblog-roan-five.vercel.app/contacts.html" target="_blank" rel="noopener">Contact</a></div>
+          <div>• Blog home: <a class="nav-link" href="https://myblog-roan-five.vercel.app/" target="_blank" rel="noopener">myblog-roan-five.vercel.app</a></div>
+        </div>
+        <div class="cta">
+          <a class="nav-link" href="logarithm.html">Start with Logarithm</a>
+          <a class="nav-link" href="#tools">Explore All Tools</a>
+        </div>
+      </section>
+
+      
+
+      <section class="panel" aria-labelledby="latest-title">
+        <h2 id="latest-title">Latest from the Blog</h2>
+        <div class="steps-list">
+          <div>• <a class="nav-link" href="https://myblog-roan-five.vercel.app/ml-journey.html" target="_blank" rel="noopener">My Machine Learning Journey So Far</a> — core ML blocks: EDA, scaling/encoding, splits, visualization.</div>
+          <div>• <a class="nav-link" href="https://myblog-roan-five.vercel.app/java-libraries-blog.html" target="_blank" rel="noopener">Underrated but Super Useful Java Libraries (2025 Edition)</a> — hidden gems and voice-to-text tools for Java devs.</div>
+          <div>• <a class="nav-link" href="https://myblog-roan-five.vercel.app/dsa-journey.html" target="_blank" rel="noopener">My DSA Journey So Far</a> — arrays, strings, recursion, bits, lists, sorting, binary search, stacks/queues.</div>
+        </div>
+      </section>
+
+      <section class="panel" aria-labelledby="why-title">
+        <h2 id="why-title">Why Math for Code?</h2>
+        <div class="steps-list">
+          <div>• Numbers and bases power parsing, serialization, hashing, bitwise ops, and performance work.</div>
+          <div>• Logs appear in complexity analysis, data scales, entropy, information theory, and ML preprocessing.</div>
+          <div>• Polynomials model curves, cost, and approximations; roots help in geometry, physics, and algorithms.</div>
+          <div>• Primes underpin cryptography, modular arithmetic, and randomized algorithms.</div>
+        </div>
+      </section>
+
+      <section id="tools" class="panel" aria-labelledby="tools-title">
+        <h2 id="tools-title">Tools</h2>
+        <div class="cards-grid">
+          <div class="tool-card"><a href="logarithm.html"><strong>Logarithm</strong><br/>Relations, change-of-base, interactive plots.</a></div>
+          <div class="tool-card"><a href="prime.html"><strong>Prime Checker</strong><br/>Is prime and factorization quick checks.</a></div>
+          <div class="tool-card"><a href="primes-range.html"><strong>Primes in Range</strong><br/>Segmented sieve for large intervals.</a></div>
+          <div class="tool-card"><a href="base-converter.html"><strong>Base Converter</strong><br/>Convert integers and fractions across bases.</a></div>
+          <div class="tool-card"><a href="quadratic.html"><strong>Quadratic</strong><br/>Discriminant, roots, vertex, steps.</a></div>
+          <div class="tool-card"><a href="cubic.html"><strong>Cubic</strong><br/>Real roots via Cardano/trig + steps.</a></div>
+          <div class="tool-card"><a href="power.html"><strong>Power</strong><br/>Exponents and roots with notes.</a></div>
+        </div>
+      </section>
+
+      <section class="panel" aria-labelledby="how-title">
+        <h2 id="how-title">How to Use</h2>
+        <div class="steps-list">
+          <div>• Pick a tool, enter inputs, and read the <em>steps</em> for a quick explanation.</div>
+          <div>• Use it as a companion while coding, debugging number logic, or studying math.</div>
+          <div>• Each page includes short <em>Theory & Notes</em> to refresh concepts quickly.</div>
+        </div>
+        <div class="cta" style="margin-top:10px">
+          <a class="nav-link" href="logarithm.html">Open Logarithm</a>
+          <a class="nav-link" href="prime.html">Open Prime Checker</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div>Made with <span style="color:#ef4444;">❤</span> — Adarsh Jha, Developer</div>
+    </footer>
+  </div>
+</body>
+</html>
